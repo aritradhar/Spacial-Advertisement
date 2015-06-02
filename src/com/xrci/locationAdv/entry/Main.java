@@ -34,7 +34,9 @@ public class Main
 			for(int j = 0; j < r; j++)
 			{
 				Rectangle rect = new Rectangle(i, j, i + 0.5f, j + 0.5f);
-				Entries.premises.add(rect);
+				
+				Premise prm = new Premise(rect);
+				Entries.premises.add(prm);
 				Entries.R_TREE.add(rect, i * r + j);
 			}
 		}

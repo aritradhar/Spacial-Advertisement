@@ -15,27 +15,36 @@
 
 package com.xrci.locationAdv.entry;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.Random;
 
-import com.infomatiq.jsi.Point;
-import com.infomatiq.jsi.SpatialIndex;
-import com.infomatiq.jsi.rtree.RTree;
-import com.xrci.locationAdv.env.ENV;
+import com.infomatiq.jsi.Rectangle;
+import com.xrci.locationAdv.env.Utils;
 
-public class Entries 
+public class Premise 
 {
-	public static Set<Premise> premises = new HashSet<>();
-	public static Set<Point> customers = new HashSet<>();
-	public static Map<Point, String> customerMap = new HashMap<>(); 
+	String id;
+	Rectangle rect;
 	
-	public static SpatialIndex R_TREE = new RTree();
-	
-	static
+	Premise(Rectangle rect)
 	{
-		R_TREE.init(ENV.prop);
+		this.rect = rect;
+		
+		byte[] b = new byte[32];
+		Random rand = new Random();
+		rand.nextBytes(b);
+		this.id = Utils.bytesToHex(b);
+	}
+	
+	@Override
+	public String toString() 
+	{
+		return this.id;
+	}
+	
+	@Override
+	public boolean equals(Object obj) 
+	{
+		Premise other = (Premise) obj;
+		return this.id.equals(other.id) && this.rect.toString().equals(other.rect.toString());
 	}
 }
-
