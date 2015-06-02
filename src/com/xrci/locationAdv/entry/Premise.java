@@ -25,7 +25,7 @@ public class Premise
 	String id;
 	Rectangle rect;
 	
-	Premise(Rectangle rect)
+	public Premise(Rectangle rect)
 	{
 		this.rect = rect;
 		

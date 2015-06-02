@@ -15,54 +15,35 @@
 
 package com.xrci.locationAdv.entry;
 
-import java.security.SecureRandom;
 import java.util.Random;
 
 import com.infomatiq.jsi.Point;
-import com.infomatiq.jsi.Rectangle;
-import com.xrci.locationAdv.env.ENV;
 import com.xrci.locationAdv.env.Utils;
 
-public class Main 
+public class Customer 
 {
-	public void init()
+	String id;
+	Point point;
+	
+	public Customer(Point point)
 	{
-		int r = (int) Math.sqrt(ENV.N_SHOPPING_PREMISES);
+		this.point = point;
 		
-		//add random premises
-		for(int i = 0; i < r; i++)
-		{
-			for(int j = 0; j < r; j++)
-			{
-				Rectangle rect = new Rectangle(i, j, i + 0.5f, j + 0.5f);
-				
-				Premise premise = new Premise(rect);
-				Entries.premises.add(premise);
-				Entries.R_TREE.add(rect, i * r + j);
-				
-				Entries.premiseMap.put(rect, premise);
-			}
-		}
-		
-		//add random customers
+		byte[] b = new byte[32];
 		Random rand = new Random();
-		for(int i = 0; i < ENV.N_CUSTOMRT_POINTS; i++)
-		{
-			
-			Point point = new Point(rand.nextFloat() * r, rand.nextFloat() * r);
-			
-			Customer customer = new Customer(point);
-			Entries.customers.add(customer);
-			Entries.customerMap.put(point, customer);
-			
-		}
-		
-		System.out.println(Entries.R_TREE.toString());
-		
+		rand.nextBytes(b);
+		this.id = Utils.bytesToHex(b);
 	}
 	
-	public static void main(String[] args) 
+	public String toString() 
 	{
-		new Main().init();
+		return this.id;
+	}
+	
+	@Override
+	public boolean equals(Object obj) 
+	{
+		Customer other = (Customer) obj;
+		return this.id.equals(other.id) && this.point.toString().equals(other.point.toString());
 	}
 }
