@@ -13,29 +13,33 @@
 //*************************************************************************************
 
 
-package com.xrci.locationAdv.entry;
+package com.xrci.locationAdv.env;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.security.SecureRandom;
 
-import com.infomatiq.jsi.Point;
-import com.infomatiq.jsi.Rectangle;
-import com.infomatiq.jsi.SpatialIndex;
-import com.infomatiq.jsi.rtree.RTree;
-import com.xrci.locationAdv.env.ENV;
-
-public class Entries 
+public class Utils 
 {
-	public static List<Rectangle> premises = new ArrayList<>();
-	public static List<Point> customers = new ArrayList<>();
-	public static Map<Point, String> customerMap = new HashMap<>(); 
+	final protected static char[] hexArray = "0123456789ABCDEF".toCharArray();
 	
-	public static SpatialIndex R_TREE = new RTree();
-	
-	static
+	public static String bytesToHex(byte[] bytes) 
 	{
-		R_TREE.init(ENV.prop);
+	    char[] hexChars = new char[bytes.length * 2];
+	    
+	    for ( int j = 0; j < bytes.length; j++ ) 
+	    {
+	        int v = bytes[j] & 0xFF;
+	        hexChars[j * 2] = hexArray[v >>> 4];
+	        hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+	    }
+	    return new String(hexChars);
+	}
+	
+	
+	public static void main(String[] args) 
+	{
+		byte[] b = new byte[4];
+		new SecureRandom().nextBytes(b);
+		
+		System.out.println(bytesToHex(b));
 	}
 }

@@ -17,15 +17,16 @@ package com.xrci.locationAdv.env;
 
 import java.util.Properties;
 
-@SuppressWarnings("null")
 public class ENV 
 {
 	public static final Integer MaxNodeEntries = 50;
 	public static final Integer MinNodeEntries = 20;
 	
+	public static Properties prop = null;
+	
 	static
 	{
-		final Properties prop = (MaxNodeEntries == null || MinNodeEntries == null ) ? null :new Properties();
+		prop = (MaxNodeEntries == null || MinNodeEntries == null ) ? null :new Properties();
 		
 		if(prop == null)
 		{
