@@ -19,6 +19,7 @@ import java.util.Random;
 import java.util.Set;
 
 import com.infomatiq.jsi.Point;
+import com.xrci.locationAdv.env.ENV;
 import com.xrci.locationAdv.env.Utils;
 
 public class Customer 
@@ -48,7 +49,7 @@ public class Customer
 		rand.nextBytes(b);
 		*/
 		
-		this.id = Utils.makeRandomId(32);
+		this.id = Utils.makeRandomId(ENV.ID_CUSTOMER);
 		
 		this.preferences = preferences;
 		this.history = history;

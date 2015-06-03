@@ -44,4 +44,8 @@ public class ENV
 	public static final int N_CUSTOMRT_POINTS = 20000;
 	public static final int N_PREFERENCES = 10;
 	public static final int N_HISTORY = 50;
+	
+	public static final int ID_CUSTOMER = 32;
+	public static final int ID_PREMISE= 32;
+	public static final int ID_ADVERTISEMENT = 8;
 }

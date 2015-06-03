@@ -15,6 +15,7 @@
 
 package com.xrci.locationAdv.entry;
 
+import com.xrci.locationAdv.env.ENV;
 import com.xrci.locationAdv.env.Utils;
 
 public class Advertisement 
@@ -25,6 +26,6 @@ public class Advertisement
 	public Advertisement(boolean[] preferences)
 	{
 		this.preferences = preferences;
-		this.id = Utils.makeRandomId(8);
+		this.id = Utils.makeRandomId(ENV.ID_ADVERTISEMENT);
 	}
 }

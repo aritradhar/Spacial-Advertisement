@@ -18,6 +18,7 @@ package com.xrci.locationAdv.entry;
 import java.util.Set;
 
 import com.infomatiq.jsi.Rectangle;
+import com.xrci.locationAdv.env.ENV;
 import com.xrci.locationAdv.env.Utils;
 
 public class Premise 
@@ -35,13 +36,13 @@ public class Premise
 		Random rand = new Random();
 		rand.nextBytes(b);
 		*/
-		this.id = Utils.makeRandomId(32);
+		this.id = Utils.makeRandomId(ENV.ID_PREMISE);
 	}
 	
 	public Premise(Rectangle rect, Set<Advertisement> advertisements)
 	{
 		this.rect = rect;
-		this.id = Utils.makeRandomId(32);
+		this.id = Utils.makeRandomId(ENV.ID_PREMISE);
 		this.advertisements = advertisements;
 	}
 	
