@@ -40,7 +40,7 @@ public class Main
 		{
 			for(int j = 0; j < r; j++)
 			{
-				Rectangle rect = new Rectangle(i, j, i + 0.5f, j + 0.5f);
+				Rectangle rect = new Rectangle(i, j, i + ENV.RECTANGLE_SEPARATION, j + ENV.RECTANGLE_SEPARATION);
 				
 				Premise premise = new Premise(rect);
 				//add advertisements in the premises
@@ -90,7 +90,10 @@ public class Main
 	{
 		
 		FileWriter fw = new FileWriter("log.txt");
-		for(Customer customer : Entries.customers)
+		
+		//query with a random customer
+		Customer customer = (Customer) Entries.customers.toArray()[new Random().nextInt(ENV.N_CUSTOMRT_POINTS)];
+		//for(Customer customer : Entries.customers)
 		{
 			Point point = customer.point;
 			Entries.R_TREE.nearestN(point, new TIntProcedure() 
@@ -100,8 +103,11 @@ public class Main
 				{
 					try 
 					{
-						fw.append(Entries.customerMap.get(point) + 
-								" : "+ id + " : " + Entries.premiseMap.get(Entries.rectangleIdMap.get(id)) + "\n");
+						System.out.println(Entries.customerMap.get(point) + " location : "+ point + 
+								" Rtree id : "+ id + " : " + Entries.premiseMap.get(Entries.rectangleIdMap.get(id)));
+						
+						fw.append(Entries.customerMap.get(point) + " location : "+ point + 
+								" Rtree id : "+ id + " : " + Entries.premiseMap.get(Entries.rectangleIdMap.get(id)) + "\n");
 					}
 					
 					catch (IOException e) 
@@ -120,8 +126,11 @@ public class Main
 	{
 		Main main = new Main();
 		main.init();
-		main.query();
 		
-		System.out.println("done..");
+		long start = System.currentTimeMillis();
+		main.query();
+		long end = System.currentTimeMillis();
+		
+		System.out.println("Total execution time : " + (end - start) + " ms");
 	}
 }

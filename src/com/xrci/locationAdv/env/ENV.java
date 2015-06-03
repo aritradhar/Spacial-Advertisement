@@ -39,6 +39,8 @@ public class ENV
 		
 	}
 	
+	public static final float RECTANGLE_SEPARATION = 0.5f;
+	
 	//N_SHOPPING_PREMISES must be a square
 	public static final int N_SHOPPING_PREMISES = 900;
 	public static final int N_CUSTOMRT_POINTS = 80000;
