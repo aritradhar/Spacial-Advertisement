@@ -15,6 +15,7 @@
 
 package com.xrci.locationAdv.entry;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import com.infomatiq.jsi.Rectangle;
@@ -37,6 +38,7 @@ public class Premise
 		rand.nextBytes(b);
 		*/
 		this.id = Utils.makeRandomId(ENV.ID_PREMISE);
+		advertisements = new HashSet<>();
 	}
 	
 	public Premise(Rectangle rect, Set<Advertisement> advertisements)
@@ -49,7 +51,7 @@ public class Premise
 	@Override
 	public String toString() 
 	{
-		return this.id;
+		return "id : " + this.id + " location : " + this.rect;
 	}
 	
 	@Override

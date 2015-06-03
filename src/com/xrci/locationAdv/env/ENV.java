@@ -19,10 +19,10 @@ import java.util.Properties;
 
 public class ENV 
 {
-	public static final boolean OverWriteTreeProp = true;
+	private static final boolean OverWriteTreeProp = true;
 	
-	public static final Integer MaxNodeEntries = 50;
-	public static final Integer MinNodeEntries = 20;
+	private static final Integer MaxNodeEntries = 50;
+	private static final Integer MinNodeEntries = 20;
 	
 	public static Properties prop = null;
 	
@@ -44,8 +44,12 @@ public class ENV
 	public static final int N_CUSTOMRT_POINTS = 20000;
 	public static final int N_PREFERENCES = 10;
 	public static final int N_HISTORY = 50;
+	public static final int N_MAX_ADVERTISEMNENTS_PER_PREMISE = 100;
 	
-	public static final int ID_CUSTOMER = 32;
-	public static final int ID_PREMISE= 32;
+	public static final int ID_CUSTOMER = 16;
+	public static final int ID_PREMISE= 16;
 	public static final int ID_ADVERTISEMENT = 8;
+	
+	public static final float QUERY_DISTANCE = 1.5f;
+	public static final int QUERY_RECTANGEL = 3;
 }

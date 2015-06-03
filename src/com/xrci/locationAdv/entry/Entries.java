@@ -32,9 +32,9 @@ public class Entries
 	public static Set<Customer> customers = new HashSet<>();
 	public static Set<Advertisement> advertisements = new HashSet<>();
 	
+	public static Map<Integer, Rectangle> rectangleIdMap = new HashMap<>();
 	public static Map<Point, Customer> customerMap = new HashMap<>(); 
 	public static Map<Rectangle, Premise> premiseMap = new HashMap<>();
-	public static Map<Premise, Advertisement> advertisementmap = new HashMap<>();
 	
 	public static SpatialIndex R_TREE = new RTree();
 	

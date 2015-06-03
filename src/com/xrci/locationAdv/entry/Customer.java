@@ -15,7 +15,6 @@
 
 package com.xrci.locationAdv.entry;
 
-import java.util.Random;
 import java.util.Set;
 
 import com.infomatiq.jsi.Point;
@@ -32,22 +31,12 @@ public class Customer
 	public Customer(Point point)
 	{
 		this.point = point;
-		
-		byte[] b = new byte[32];
-		Random rand = new Random();
-		rand.nextBytes(b);
-		this.id = Utils.bytesToHex(b);
+		this.id = Utils.makeRandomId(ENV.ID_CUSTOMER);
 	}
 	
 	public Customer(Point point, boolean[] preferences, Set<boolean[]> history)
 	{
 		this.point = point;
-		
-		/*
-		byte[] b = new byte[32];
-		Random rand = new Random();
-		rand.nextBytes(b);
-		*/
 		
 		this.id = Utils.makeRandomId(ENV.ID_CUSTOMER);
 		
@@ -57,7 +46,7 @@ public class Customer
 	
 	public String toString() 
 	{
-		return this.id;
+		return "Customer id : " + this.id;
 	}
 	
 	@Override
