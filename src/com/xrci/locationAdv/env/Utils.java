@@ -51,6 +51,23 @@ public class Utils
 		}
 		return new String(hexChars);
 	}
+	
+	public static boolean[] makeRandomBooleanArray(int count)
+	{
+		boolean[] arr = new boolean[count];
+		Random rand = new Random();
+		
+		for(int i = 0; i < count; i++)
+		{
+			int r = rand.nextInt() % 2;
+			if(r == 0)
+				arr[i] = true;
+			else
+				arr[i] = false;
+		}
+		
+		return arr;
+	}
 
 
 	public static void main(String[] args) 

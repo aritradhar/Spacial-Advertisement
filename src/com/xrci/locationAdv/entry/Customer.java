@@ -16,6 +16,7 @@
 package com.xrci.locationAdv.entry;
 
 import java.util.Random;
+import java.util.Set;
 
 import com.infomatiq.jsi.Point;
 import com.xrci.locationAdv.env.Utils;
@@ -25,7 +26,7 @@ public class Customer
 	String id;
 	Point point;
 	boolean[] preferences;
-	boolean[] history;
+	Set<boolean[]> history;
 	
 	public Customer(Point point)
 	{
@@ -37,7 +38,7 @@ public class Customer
 		this.id = Utils.bytesToHex(b);
 	}
 	
-	public Customer(Point point, boolean[] preferences, boolean[] history)
+	public Customer(Point point, boolean[] preferences, Set<boolean[]> history)
 	{
 		this.point = point;
 		
