@@ -15,6 +15,8 @@
 
 package com.xrci.locationAdv.entry;
 
+import java.util.Set;
+
 import com.xrci.locationAdv.env.ENV;
 import com.xrci.locationAdv.env.Utils;
 
@@ -38,6 +40,30 @@ public class Advertisement
 	@Override
 	public String toString() 
 	{
-		return "id : " + this.id + " Premise " + this.premise;
+		return "Advertisement id : " + this.id + " Premise " + this.premise;
+	}
+	
+	public float profileMatch(Customer customer )
+	{
+		boolean[] preference = customer.preferences;
+		Set<boolean[]> history= customer.history;
+		
+		int tot = 0;
+		for(int i = 0; i < ENV.N_PREFERENCES; i++)
+		{
+			if(this.preferences[i] == preference[i])
+				tot++;
+		}
+		
+		for(boolean[] b : history)
+		{
+			for(int i = 0; i < ENV.N_PREFERENCES; i++)
+			{
+				if(this.preferences[i] == b[i])
+					tot++;
+			}
+		}
+		
+		return (float)(tot)/(ENV.N_PREFERENCES * ENV.N_HISTORY + 1);
 	}
 }

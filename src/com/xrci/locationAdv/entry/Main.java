@@ -103,11 +103,19 @@ public class Main
 				{
 					try 
 					{
-						System.out.println(Entries.customerMap.get(point) + " location : "+ point + 
-								" Rtree id : "+ id + " : " + Entries.premiseMap.get(Entries.rectangleIdMap.get(id)));
+						Premise p = Entries.premiseMap.get(Entries.rectangleIdMap.get(id));
 						
-						fw.append(Entries.customerMap.get(point) + " location : "+ point + 
-								" Rtree id : "+ id + " : " + Entries.premiseMap.get(Entries.rectangleIdMap.get(id)) + "\n");
+						System.out.println(customer + " location : "+ point + 
+								" Rtree id : "+ id + " : " + p);
+						
+						fw.append(customer + " location : "+ point + 
+								" Rtree id : "+ id + " : " + p + "\n");
+						
+						for(Advertisement ad : p.advertisements)
+						{
+							System.out.println(ad + "Match : " + ad.profileMatch(customer));
+						}
+						
 					}
 					
 					catch (IOException e) 
