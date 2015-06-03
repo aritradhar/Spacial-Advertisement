@@ -24,6 +24,8 @@ public class Customer
 {
 	String id;
 	Point point;
+	boolean[] preferences;
+	boolean[] history;
 	
 	public Customer(Point point)
 	{
@@ -33,6 +35,22 @@ public class Customer
 		Random rand = new Random();
 		rand.nextBytes(b);
 		this.id = Utils.bytesToHex(b);
+	}
+	
+	public Customer(Point point, boolean[] preferences, boolean[] history)
+	{
+		this.point = point;
+		
+		/*
+		byte[] b = new byte[32];
+		Random rand = new Random();
+		rand.nextBytes(b);
+		*/
+		
+		this.id = Utils.makeRandomId(32);
+		
+		this.preferences = preferences;
+		this.history = history;
 	}
 	
 	public String toString() 

@@ -15,13 +15,13 @@
 
 package com.xrci.locationAdv.entry;
 
-import java.security.SecureRandom;
+import gnu.trove.TIntProcedure;
+
 import java.util.Random;
 
 import com.infomatiq.jsi.Point;
 import com.infomatiq.jsi.Rectangle;
 import com.xrci.locationAdv.env.ENV;
-import com.xrci.locationAdv.env.Utils;
 
 public class Main 
 {
@@ -55,6 +55,15 @@ public class Main
 			Entries.customers.add(customer);
 			Entries.customerMap.put(point, customer);
 			
+			Entries.R_TREE.nearestN(point, new TIntProcedure() 
+											{	
+												@Override
+												public boolean execute(int id) 
+												{
+													System.out.println(point.toString() + " : "+ id);
+													return false;
+												}
+											}, 3, 1.5f);
 		}
 		
 		System.out.println(Entries.R_TREE.toString());

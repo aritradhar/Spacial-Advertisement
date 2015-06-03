@@ -15,46 +15,16 @@
 
 package com.xrci.locationAdv.entry;
 
-import java.util.Set;
-
-import com.infomatiq.jsi.Rectangle;
 import com.xrci.locationAdv.env.Utils;
 
-public class Premise 
+public class Advertisement 
 {
 	String id;
-	Rectangle rect;
-	public Set<Advertisement> advertisements;
+	boolean[] preferences;
 	
-	public Premise(Rectangle rect)
+	public Advertisement(boolean[] preferences)
 	{
-		this.rect = rect;
-		
-		/*
-		byte[] b = new byte[32];
-		Random rand = new Random();
-		rand.nextBytes(b);
-		*/
-		this.id = Utils.makeRandomId(32);
-	}
-	
-	public Premise(Rectangle rect, Set<Advertisement> advertisements)
-	{
-		this.rect = rect;
-		this.id = Utils.makeRandomId(32);
-		this.advertisements = advertisements;
-	}
-	
-	@Override
-	public String toString() 
-	{
-		return this.id;
-	}
-	
-	@Override
-	public boolean equals(Object obj) 
-	{
-		Premise other = (Premise) obj;
-		return this.id.equals(other.id) && this.rect.toString().equals(other.rect.toString());
+		this.preferences = preferences;
+		this.id = Utils.makeRandomId(8);
 	}
 }
