@@ -83,8 +83,7 @@ public class Main
 			
 		}
 		
-		System.out.println(Entries.R_TREE.toString());
-		
+		System.out.println(Entries.R_TREE.toString());	
 	}
 	
 	public void query() throws IOException
@@ -107,7 +106,6 @@ public class Main
 					
 					catch (IOException e) 
 					{
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}				
 					return false;
