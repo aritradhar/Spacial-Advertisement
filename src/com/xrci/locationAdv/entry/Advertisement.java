@@ -55,6 +55,7 @@ public class Advertisement
 				tot++;
 		}
 		
+		
 		for(boolean[] b : history)
 		{
 			for(int i = 0; i < ENV.N_PREFERENCES; i++)
@@ -64,6 +65,6 @@ public class Advertisement
 			}
 		}
 		
-		return (float)(tot)/(ENV.N_PREFERENCES * ENV.N_HISTORY + 1);
+		return (float)(tot)/(ENV.N_PREFERENCES * ENV.N_HISTORY + ENV.N_PREFERENCES);
 	}
 }

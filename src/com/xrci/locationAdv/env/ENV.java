@@ -44,8 +44,10 @@ public class ENV
 	//N_SHOPPING_PREMISES must be a square
 	public static final int N_SHOPPING_PREMISES = 900;
 	public static final int N_CUSTOMRT_POINTS = 80000;
+	
 	public static final int N_PREFERENCES = 10;
-	public static final int N_HISTORY = 50;
+	public static final int N_HISTORY = 10;
+	
 	public static final int N_MAX_ADVERTISEMNENTS_PER_PREMISE = 100;
 	
 	public static final int ID_CUSTOMER = 16;

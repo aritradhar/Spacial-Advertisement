@@ -113,7 +113,9 @@ public class Main
 						
 						for(Advertisement ad : p.advertisements)
 						{
-							System.out.println(ad + "Match : " + ad.profileMatch(customer));
+							//System.out.println(ad + "Match : " + ad.profileMatch(customer));
+							
+							fw.append(ad + "Match : " + ad.profileMatch(customer) + "\n");
 						}
 						
 					}
