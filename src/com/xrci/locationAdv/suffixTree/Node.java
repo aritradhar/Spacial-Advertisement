@@ -32,7 +32,7 @@ public class Node
 	
 	public Node()
 	{
-		this.address = null;
+		this.address = new String();
 		this.children = new Node[16];
 	}
 	

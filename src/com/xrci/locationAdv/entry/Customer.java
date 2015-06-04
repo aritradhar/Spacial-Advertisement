@@ -23,7 +23,7 @@ import com.xrci.locationAdv.env.Utils;
 
 public class Customer 
 {
-	String id;
+	public String id;
 	Point point;
 	boolean[] preferences;
 	Set<boolean[]> history;
