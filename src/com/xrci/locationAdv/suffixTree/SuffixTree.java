@@ -27,7 +27,11 @@ public class SuffixTree
 		this.ROOT = new Node();
 	}
 	
-	public void insert(Customer customer)
+	/**
+	 * Add or update
+	 * @param customer {@code Customer} object
+	 */
+	public void add(Customer customer)
 	{
 		String customer_id = customer.id;
 		
@@ -46,6 +50,6 @@ public class SuffixTree
 	public static void main(String[] args) 
 	{
 		SuffixTree st = new SuffixTree();
-		st.insert(new Customer(new Point(1.5f, 1.0f)));
+		st.add(new Customer(new Point(1.5f, 1.0f)));
 	}
 }

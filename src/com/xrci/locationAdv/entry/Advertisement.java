@@ -43,7 +43,7 @@ public class Advertisement
 		return "Advertisement id : " + this.id + " Premise " + this.premise;
 	}
 	
-	public float profileMatch(Customer customer )
+	public float profileMatch(Customer customer)
 	{
 		boolean[] preference = customer.preferences;
 		Set<boolean[]> history= customer.history;
