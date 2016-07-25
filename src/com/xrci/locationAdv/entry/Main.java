@@ -103,12 +103,12 @@ public class Main
 				{
 					try 
 					{
-						Premise p = Entries.premiseMap.get(Entries.rectangleIdMap.get(id));
+						//Premise p = Entries.premiseMap.get(Entries.rectangleIdMap.get(id));
 						
-						System.out.println(customer + " location : "+ point + 
-								" Rtree id : "+ id + " : " + p);
+						//System.out.println(customer + " location : "+ point + 
+						//		" Rtree id : "+ id + " : " + p);
 						
-						fw.append(customer + " location : "+ point + 
+						/*fw.append(customer + " location : "+ point + 
 								" Rtree id : "+ id + " : " + p + "\n");
 						
 						for(Advertisement ad : p.advertisements)
@@ -116,11 +116,11 @@ public class Main
 							//System.out.println(ad + "Match : " + ad.profileMatch(customer));
 							
 							fw.append(ad + "Match : " + ad.profileMatch(customer) + "\n");
-						}
+						}*/
 						
 					}
 					
-					catch (IOException e) 
+					catch (Exception e) 
 					{
 						e.printStackTrace();
 					}				

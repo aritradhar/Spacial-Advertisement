@@ -42,7 +42,7 @@ public class ENV
 	public static final float RECTANGLE_SEPARATION = 0.5f;
 	
 	//N_SHOPPING_PREMISES must be a square
-	public static final int N_SHOPPING_PREMISES = 900;
+	public static final int N_SHOPPING_PREMISES = 100000;
 	public static final int N_CUSTOMRT_POINTS = 80000;
 	
 	public static final int N_PREFERENCES = 10;
@@ -54,6 +54,6 @@ public class ENV
 	public static final int ID_PREMISE= 16;
 	public static final int ID_ADVERTISEMENT = 8;
 	
-	public static final float QUERY_DISTANCE = 1.5f;
-	public static final int QUERY_RECTANGEL = 3;
+	public static final float QUERY_DISTANCE = 3.5f;
+	public static final int QUERY_RECTANGEL = 50;
 }

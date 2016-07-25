@@ -10,5 +10,6 @@
 	<classpathentry kind="lib" path="C:/lib/JSI/lib/slf4j-api-1.6.3.jar" sourcepath="C:/lib/log/slf4j-1.7.12/slf4j-api-1.7.12-sources.jar"/>
 	<classpathentry kind="lib" path="C:/lib/JSI/lib/trove4j-2.0.2.jar"/>
 	<classpathentry kind="lib" path="C:/lib/log/slf4j-1.7.12/slf4j-jdk14-1.7.12.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/TaxonomyTree"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
